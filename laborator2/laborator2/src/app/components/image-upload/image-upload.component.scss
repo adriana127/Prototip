@@ -1,0 +1,31 @@
+#fileupload {
+    display: none;
+}
+#image{
+    display:block;
+    margin:auto;
+    min-height: 50px;
+    min-width: 50px;
+    max-height: 500px;
+    max-width: 900px;
+}
+#uploadButton{
+    display:block;
+    margin:auto;
+    width: 150px;
+    background-color: rgb(211, 109, 211) ;
+    padding-left: inherit;
+}
+#background{
+  height: 100%;
+    display:block;
+    margin: unset;
+}
+.row{
+      padding-top: 50px;
+}
+.container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 5rem;
+}

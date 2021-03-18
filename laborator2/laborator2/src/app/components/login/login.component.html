@@ -1,0 +1,27 @@
+
+<div id="background">
+    <div class="div">
+      <mat-card> 
+        <mat-card-header>
+        <img class="image" id="image" [src]="imgURL">
+          <mat-card-content>
+            <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" method="POST" >
+              <h1 class="text">User login</h1>
+              <mat-form-field >
+                <mat-label class="text">Email</mat-label>
+                <span matPrefix class="text"><mat-icon> email</mat-icon> &nbsp;</span>
+                <input matInput class="text" placeholder="Email"  formControlName="username"> 
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label class="text">Password</mat-label>
+                <span matPrefix class="text"><mat-icon>lock</mat-icon> &nbsp;</span>
+                <input matInput class="text" placeholder="Password" formControlName="password">
+              </mat-form-field>
+              <button mat-raised-button class="button" [disabled]="!loginForm.valid">Login</button>
+              <p class="text-style">Forgot Username/Password?</p>
+            </form>
+        </mat-card-content>
+      </mat-card-header>
+    </mat-card>
+    </div>
+  </div>

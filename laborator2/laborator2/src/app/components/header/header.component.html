@@ -1,0 +1,10 @@
+<div *ngIf="headStateService.isVisible()" id="navigation-bar">
+  <nav>
+    <ul>
+      <li><a routerLink="/image-upload" id="logo">Navigate to upload</a></li>
+      <li><a routerLink="/table">Navigate to history</a></li>
+      <li><a routerLink="/login" (click)="logout()">Log-out</a></li>
+      <a href="#" id="menu-icon"></a>
+    </ul>
+  </nav>
+</div>

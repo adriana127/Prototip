@@ -1,0 +1,16 @@
+<div id="background">
+    <div class="container">
+        <div class="row">
+            <img [src]="imgURL" id="image">
+
+        </div>
+        <div class="row">
+
+            <span style="color:red;" *ngIf="message">{{message}}</span>
+
+            <input #file type="file" accept='image/*' id="fileupload" (change)="preview(file.files)" />
+            <button mat-raised-button color="primary" id="uploadButton" (click)="clickUpload()"
+                class="addfiles">Upload</button>
+        </div>
+    </div>
+</div>

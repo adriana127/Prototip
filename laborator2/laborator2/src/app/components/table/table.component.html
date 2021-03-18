@@ -1,0 +1,60 @@
+<div class="body">
+  <div class="container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox
+            (change)="$event ? masterToggle() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()"
+            [aria-label]="checkboxLabel()"
+          >
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox
+            (click)="$event.stopPropagation()"
+            (change)="$event ? selection.toggle(row) : null"
+            [checked]="selection.isSelected(row)"
+            [aria-label]="checkboxLabel(row)"
+          >
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="imageName">
+        <input
+          type="checkbox"
+          class="select-item checkbox"
+          name="select-item"
+          value="1000"
+        />
+        <th mat-header-cell *matHeaderCellDef>Image Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.imageName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="imageSize">
+        <th mat-header-cell *matHeaderCellDef>Image Size.</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.imageSize | filesizepipe }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="recognitionResult">
+        <th mat-header-cell *matHeaderCellDef>Recognition Result</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.recognitionResult }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="downloadLink">
+        <th mat-header-cell *matHeaderCellDef>Download Link</th>
+        <td mat-cell *matCellDef="let element">
+          <a href="{{ element.downloadLink }}">{{ element.downloadLink }}</a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

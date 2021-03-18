@@ -1,0 +1,49 @@
+body,html{
+    height: 100%;
+  }
+
+  .text{
+    color:black;
+  }
+  .div{
+    padding-top: 10%;
+  }
+  mat-card {
+     
+       max-width: 600px;
+       max-height: 500px;
+       min-width: 200px;
+       min-height:100px ;
+       margin: auto;
+       text-align: center; 
+       background-color:whitesmoke;
+       padding-top: 50px;
+  }
+        
+  mat-form-field{
+          display: block;
+  }
+  .form{
+    margin-left: 115px;
+  }
+  
+  .image{
+    display: block;
+    width: 95px;
+    height:95px;
+    margin-left: 0.1px;
+    margin-right: 10px;
+    margin-top: 45px;
+  }
+  
+  .button{
+    background-color: rgb(92, 165, 92);
+    width: 110%;
+    
+  }
+  
+  .text-style{
+    color: black;
+    margin-top: 10px;
+    
+  }

@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+  # Web App #
+  web:
+    image: node:14
+    
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    command: >
+      bash -c "npm install
+      && npm start"
+  
+  # DB
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "FSDDatabase"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "1q2w3e"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql
